@@ -69,7 +69,7 @@ export default function HeroScene() {
           style={{ opacity: Math.max(0, 1 - scrollProgress * 3) }}
         >
           {/* 🔥 NEW: gradient backdrop for readability */}
-          <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-64 bg-linear-to-t from-black/50 to-transparent pointer-events-none" />
 
           <p
             className="font-(family-name:--font-lora) italic text-[#FFD580] text-sm tracking-widest mb-3 uppercase"
