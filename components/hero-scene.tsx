@@ -23,16 +23,15 @@ export default function HeroScene() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Interpolated values for zoom effect
   const scale = 1 + scrollProgress * 1.5;
   const translateY = scrollProgress * -6;
   const sceneOpacity = scrollProgress < 0.7 ? 1 : 1 - (scrollProgress - 0.7) / 0.3;
   const overlayOpacity = scrollProgress < 0.5 ? 0 : (scrollProgress - 0.5) / 0.5;
 
   return (
-    /* Sticky scroll container — 300vh gives room to scroll through the zoom */
     <div ref={containerRef} className="relative h-[300vh]" id="hero">
       <div className="sticky top-0 h-screen overflow-hidden">
+
         {/* ── Background studio scene ── */}
         <div
           ref={sceneRef}
@@ -50,34 +49,46 @@ export default function HeroScene() {
             className="w-full h-full object-cover object-center"
           />
 
-          {/* Vignette overlay */}
           <div className="absolute inset-0 vignette pointer-events-none" />
 
-          {/* Warm ambient overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{ background: "oklch(0.14 0.05 50 / 0.3)" }}
           />
         </div>
 
-        {/* ── Dark fade overlay as zoom progresses ── */}
+        {/* ── Dark fade overlay ── */}
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-100"
           style={{ background: "oklch(0.10 0.02 50)", opacity: overlayOpacity }}
         />
 
-        {/* ── Hero text (fades out as scroll progresses) ── */}
+        {/* ── Hero text ── */}
         <div
           className="absolute inset-0 flex flex-col items-center justify-end pb-24 z-10 pointer-events-none"
           style={{ opacity: Math.max(0, 1 - scrollProgress * 3) }}
         >
-          <p className="font-(family-name:--font-lora) italic text-primary/80 text-sm tracking-widest mb-3 uppercase">
+          {/* 🔥 NEW: gradient backdrop for readability */}
+          <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+
+          <p
+            className="font-(family-name:--font-lora) italic text-[#FFD580] text-sm tracking-widest mb-3 uppercase"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}
+          >
             Frame Every Feeling
           </p>
-          <h1 className="font-(family-name:--font-cinzel) text-5xl md:text-7xl font-black text-center text-foreground leading-tight tracking-tight text-balance drop-shadow-2xl">
+
+          <h1
+            className="font-(family-name:--font-cinzel) text-5xl md:text-7xl font-black text-center text-[#FFE4B5] leading-tight tracking-tight text-balance drop-shadow-2xl"
+            style={{ textShadow: "0 4px 30px rgba(255,180,80,0.4)" }}
+          >
             Teja Visual Arts
           </h1>
-          <p className="font-(family-name:--font-lora) text-muted-foreground text-center mt-4 max-w-md leading-relaxed text-base">
+
+          <p
+            className="font-(family-name:--font-lora) text-[#FFF3E0] text-center mt-4 max-w-md leading-relaxed text-base"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.6)" }}
+          >
             Cinematic video editing, colour grading & motion — crafted with warmth.
           </p>
 
@@ -90,7 +101,7 @@ export default function HeroScene() {
           </div>
         </div>
 
-        {/* ── Monitor carousel — fades in after zoom ── */}
+        {/* ── Monitor carousel ── */}
         <div
           className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
           style={{
@@ -101,7 +112,7 @@ export default function HeroScene() {
           <MonitorCarousel />
         </div>
 
-        {/* ── Floating studio label ── */}
+        {/* ── Studio label ── */}
         <div
           className="absolute bottom-6 left-6 z-30"
           style={{ opacity: Math.max(0, 1 - scrollProgress * 5) }}
@@ -110,6 +121,7 @@ export default function HeroScene() {
             Studio — Est. 2025
           </p>
         </div>
+
       </div>
     </div>
   );
