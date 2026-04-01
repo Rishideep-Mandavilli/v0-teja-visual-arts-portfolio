@@ -30,15 +30,15 @@ export default function ContactSection() {
         />
 
         <div className="text-center mb-12">
-          <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
+          <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
             Get in Touch
           </p>
-          <h2 className="font-[family-name:var(--font-cinzel)] text-4xl md:text-5xl font-bold text-foreground text-balance mb-4">
+          <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground text-balance mb-4">
             {"Let's Make Something"}
             <br />
-            <span className="text-primary italic font-[family-name:var(--font-lora)]">Beautiful Together</span>
+            <span className="text-primary italic font-(family-name:--font-lora)">Beautiful Together</span>
           </h2>
-          <p className="font-[family-name:var(--font-lora)] text-muted-foreground leading-relaxed">
+          <p className="font-(family-name:--font-lora) text-muted-foreground leading-relaxed">
             Have a project in mind? I&apos;d love to hear your story.
           </p>
         </div>
@@ -50,7 +50,7 @@ export default function ContactSection() {
               className="rounded-xl p-5"
               style={{ background: "oklch(0.18 0.03 50)", border: "1px solid oklch(0.26 0.05 50)" }}
             >
-              <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary uppercase mb-4">
+              <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary uppercase mb-4">
                 Reach Out
               </p>
               <div className="flex flex-col gap-3">
@@ -59,7 +59,7 @@ export default function ContactSection() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  <span className="font-[family-name:var(--font-lora)] text-sm">hello@tejavisualarts.com</span>
+                  <span className="font-(family-name:--font-lora) text-sm">hello@tejavisualarts.com</span>
                 </a>
                 <a
                   href="#"
@@ -67,7 +67,7 @@ export default function ContactSection() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Instagram className="w-4 h-4 shrink-0" />
-                  <span className="font-[family-name:var(--font-lora)] text-sm">@tejavisualarts</span>
+                  <span className="font-(family-name:--font-lora) text-sm">@tejavisualarts</span>
                 </a>
                 <a
                   href="#"
@@ -75,7 +75,7 @@ export default function ContactSection() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Youtube className="w-4 h-4 shrink-0" />
-                  <span className="font-[family-name:var(--font-lora)] text-sm">Teja Visual Arts</span>
+                  <span className="font-(family-name:--font-lora) text-sm">Teja Visual Arts</span>
                 </a>
               </div>
             </div>
@@ -87,11 +87,11 @@ export default function ContactSection() {
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary uppercase">
+                <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary uppercase">
                   Available
                 </p>
               </div>
-              <p className="font-[family-name:var(--font-lora)] text-sm text-muted-foreground leading-relaxed">
+              <p className="font-(family-name:--font-lora) text-sm text-muted-foreground leading-relaxed">
                 Currently accepting new projects for Q2 2026. Limited slots remaining.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function ContactSection() {
               <div>
                 <label
                   htmlFor="name"
-                  className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-muted-foreground uppercase block mb-2"
+                  className="font-(family-name:--font-cinzel) text-xs tracking-widest text-muted-foreground uppercase block mb-2"
                 >
                   Name
                 </label>
@@ -114,7 +114,7 @@ export default function ContactSection() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-lg text-sm font-[family-name:var(--font-lora)] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg text-sm font-(family-name:--font-lora) text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                   style={{
                     background: "oklch(0.18 0.03 50)",
                     border: "1px solid oklch(0.26 0.05 50)",
@@ -124,7 +124,7 @@ export default function ContactSection() {
               <div>
                 <label
                   htmlFor="email"
-                  className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-muted-foreground uppercase block mb-2"
+                  className="font-(family-name:--font-cinzel) text-xs tracking-widest text-muted-foreground uppercase block mb-2"
                 >
                   Email
                 </label>
@@ -135,7 +135,7 @@ export default function ContactSection() {
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg text-sm font-[family-name:var(--font-lora)] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg text-sm font-(family-name:--font-lora) text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                   style={{
                     background: "oklch(0.18 0.03 50)",
                     border: "1px solid oklch(0.26 0.05 50)",
@@ -146,7 +146,7 @@ export default function ContactSection() {
             <div>
               <label
                 htmlFor="message"
-                className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-muted-foreground uppercase block mb-2"
+                className="font-(family-name:--font-cinzel) text-xs tracking-widest text-muted-foreground uppercase block mb-2"
               >
                 Message
               </label>
@@ -157,7 +157,7 @@ export default function ContactSection() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Tell me about your project..."
-                className="w-full px-4 py-3 rounded-lg text-sm font-[family-name:var(--font-lora)] text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all duration-300"
+                className="w-full px-4 py-3 rounded-lg text-sm font-(family-name:--font-lora) text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all duration-300"
                 style={{
                   background: "oklch(0.18 0.03 50)",
                   border: "1px solid oklch(0.26 0.05 50)",
@@ -166,7 +166,7 @@ export default function ContactSection() {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-[family-name:var(--font-cinzel)] text-sm tracking-widest uppercase text-primary-foreground transition-all duration-300 hover:brightness-110 active:scale-95"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-(family-name:--font-cinzel) text-sm tracking-widest uppercase text-primary-foreground transition-all duration-300 hover:brightness-110 active:scale-95"
               style={{ background: "oklch(0.62 0.16 50)" }}
             >
               {sent ? (
