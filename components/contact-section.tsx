@@ -92,7 +92,7 @@ export default function ContactSection() {
                 </p>
               </div>
               <p className="font-(family-name:--font-lora) text-sm text-muted-foreground leading-relaxed">
-                Currently accepting new projects for Q2 2026. Limited slots remaining.
+                Accepting new projects in 2026. Contact me for more details.
               </p>
             </div>
           </div>
