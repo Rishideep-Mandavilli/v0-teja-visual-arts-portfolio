@@ -53,16 +53,16 @@ export default function WorkSection() {
       {/* Section header */}
       <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
+          <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
             Selected Work
           </p>
-          <h2 className="font-[family-name:var(--font-cinzel)] text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
+          <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
             Stories in Light
             <br />
             <span className="text-primary">& Shadow</span>
           </h2>
         </div>
-        <p className="font-[family-name:var(--font-lora)] italic text-muted-foreground max-w-xs leading-relaxed">
+        <p className="font-(family-name:--font-lora) italic text-muted-foreground max-w-xs leading-relaxed">
           Each project is a world carefully assembled — frame by frame, breath by breath.
         </p>
       </div>
@@ -108,20 +108,20 @@ export default function WorkSection() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-[family-name:var(--font-cinzel)] text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
+                    className="font-(family-name:--font-cinzel) text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary/60 uppercase mb-1">
+              <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary/60 uppercase mb-1">
                 {project.category} · {project.year}
               </p>
-              <h3 className="font-[family-name:var(--font-cinzel)] text-2xl font-bold text-foreground">
+              <h3 className="font-(family-name:--font-cinzel) text-2xl font-bold text-foreground">
                 {project.title}
               </h3>
               <p
-                className="font-[family-name:var(--font-lora)] italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
+                className="font-(family-name:--font-lora) italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
                 style={{
                   maxHeight: hovered === project.id ? "80px" : "0px",
                   opacity: hovered === project.id ? 1 : 0,
@@ -132,7 +132,7 @@ export default function WorkSection() {
             </div>
 
             {/* Corner number */}
-            <div className="absolute top-4 right-4 font-[family-name:var(--font-cinzel)] text-xs text-foreground/30">
+            <div className="absolute top-4 right-4 font-(family-name:--font-cinzel) text-xs text-foreground/30">
               0{project.id}
             </div>
           </div>
