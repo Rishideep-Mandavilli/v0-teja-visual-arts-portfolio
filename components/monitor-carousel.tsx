@@ -103,13 +103,13 @@ export default function MonitorCarousel() {
           >
             <div className="flex items-end justify-between">
               <div>
-                <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary/70 uppercase mb-1">
+                <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary/70 uppercase mb-1">
                   {project.category} · {project.year}
                 </p>
-                <h3 className="font-[family-name:var(--font-cinzel)] text-2xl font-bold text-foreground">
+                <h3 className="font-(family-name:--font-cinzel) text-2xl font-bold text-foreground">
                   {project.title}
                 </h3>
-                <p className="font-[family-name:var(--font-lora)] italic text-sm text-muted-foreground mt-1">
+                <p className="font-(family-name:--font-lora) italic text-sm text-muted-foreground mt-1">
                   {project.description}
                 </p>
               </div>
@@ -131,9 +131,8 @@ export default function MonitorCarousel() {
                 key={i}
                 aria-label={`Go to project ${i + 1}`}
                 onClick={() => setActive(i)}
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                  i === active ? "bg-primary w-4" : "bg-muted-foreground/40"
-                }`}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === active ? "bg-primary w-4" : "bg-muted-foreground/40"
+                  }`}
               />
             ))}
           </div>
@@ -144,7 +143,7 @@ export default function MonitorCarousel() {
           className="flex items-center justify-between px-6 py-3"
           style={{ background: "oklch(0.15 0.03 47)" }}
         >
-          <span className="font-[family-name:var(--font-cinzel)] text-[10px] tracking-widest text-primary/50 uppercase">
+          <span className="font-(family-name:--font-cinzel) text-[10px] tracking-widest text-primary/50 uppercase">
             Teja Visual Arts · Portfolio
           </span>
           <div className="flex items-center gap-1">
