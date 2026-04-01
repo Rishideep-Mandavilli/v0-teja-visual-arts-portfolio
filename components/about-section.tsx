@@ -56,8 +56,8 @@ export default function AboutSection() {
                 boxShadow: "0 0 30px oklch(0.72 0.18 55 / 0.2)",
               }}
             >
-              <p className="font-[family-name:var(--font-cinzel)] text-3xl font-bold text-primary">5+</p>
-              <p className="font-[family-name:var(--font-lora)] text-xs text-muted-foreground mt-0.5">Years of craft</p>
+              <p className="font-(family-name:--font-cinzel) text-3xl font-bold text-primary">5+</p>
+              <p className="font-(family-name:--font-lora) text-xs text-muted-foreground mt-0.5">Years of craft</p>
             </div>
             <div
               className="absolute -top-4 -left-4 rounded-xl p-4 backdrop-blur-md"
@@ -66,29 +66,29 @@ export default function AboutSection() {
                 border: "1px solid oklch(0.30 0.06 50)",
               }}
             >
-              <p className="font-[family-name:var(--font-cinzel)] text-3xl font-bold text-primary">120+</p>
-              <p className="font-[family-name:var(--font-lora)] text-xs text-muted-foreground mt-0.5">Projects edited</p>
+              <p className="font-(family-name:--font-cinzel) text-3xl font-bold text-primary">120+</p>
+              <p className="font-(family-name:--font-lora) text-xs text-muted-foreground mt-0.5">Projects edited</p>
             </div>
           </div>
 
           {/* Right — text & skills */}
           <div className="flex flex-col gap-8">
             <div>
-              <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
+              <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
                 About Me
               </p>
-              <h2 className="font-[family-name:var(--font-cinzel)] text-4xl font-bold text-foreground leading-tight mb-5 text-balance">
+              <h2 className="font-(family-name:--font-cinzel) text-4xl font-bold text-foreground leading-tight mb-5 text-balance">
                 A Quiet Studio,
                 <br />
-                <span className="text-primary italic font-[family-name:var(--font-lora)]">Loud Stories</span>
+                <span className="text-primary italic font-(family-name:--font-lora)">Loud Stories</span>
               </h2>
-              <p className="font-[family-name:var(--font-lora)] text-muted-foreground leading-relaxed">
-                I&apos;m Teja — a video editor and colourist who believes every cut is an emotion. 
-                Working from a warm, cluttered studio that smells like coffee and old film, 
+              <p className="font-(family-name:--font-lora) text-muted-foreground leading-relaxed">
+                I&apos;m Teja — a video editor and colourist who believes every cut is an emotion.
+                Working from a warm, cluttered studio that smells like coffee and old film,
                 I shape raw footage into cinematic experiences that linger long after the final frame.
               </p>
-              <p className="font-[family-name:var(--font-lora)] text-muted-foreground leading-relaxed mt-4">
-                Inspired by the painterly warmth of Studio Ghibli and the soul of classic cinema, 
+              <p className="font-(family-name:--font-lora) text-muted-foreground leading-relaxed mt-4">
+                Inspired by the painterly warmth of Studio Ghibli and the soul of classic cinema,
                 I bring that same quiet magic to every commercial, documentary, and short film I touch.
               </p>
             </div>
@@ -98,10 +98,10 @@ export default function AboutSection() {
               {skills.map((skill) => (
                 <div key={skill.label}>
                   <div className="flex justify-between items-center mb-1.5">
-                    <span className="font-[family-name:var(--font-cinzel)] text-xs tracking-wide text-foreground/80 uppercase">
+                    <span className="font-(family-name:--font-cinzel) text-xs tracking-wide text-foreground/80 uppercase">
                       {skill.label}
                     </span>
-                    <span className="font-[family-name:var(--font-cinzel)] text-xs text-primary">
+                    <span className="font-(family-name:--font-cinzel) text-xs text-primary">
                       {skill.value}%
                     </span>
                   </div>
@@ -123,14 +123,14 @@ export default function AboutSection() {
 
             {/* Tools */}
             <div>
-              <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-muted-foreground uppercase mb-3">
+              <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-muted-foreground uppercase mb-3">
                 Tools of the trade
               </p>
               <div className="flex flex-wrap gap-2">
                 {tools.map((tool) => (
                   <span
                     key={tool}
-                    className="font-[family-name:var(--font-lora)] text-sm text-foreground/70 border border-border rounded-full px-3 py-1 hover:border-primary/60 hover:text-primary transition-colors duration-300"
+                    className="font-(family-name:--font-lora) text-sm text-foreground/70 border border-border rounded-full px-3 py-1 hover:border-primary/60 hover:text-primary transition-colors duration-300"
                   >
                     {tool}
                   </span>
