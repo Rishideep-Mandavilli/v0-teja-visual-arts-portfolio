@@ -71,19 +71,19 @@ export default function HeroScene() {
           className="absolute inset-0 flex flex-col items-center justify-end pb-24 z-10 pointer-events-none"
           style={{ opacity: Math.max(0, 1 - scrollProgress * 3) }}
         >
-          <p className="font-[family-name:var(--font-lora)] italic text-primary/80 text-sm tracking-widest mb-3 uppercase">
+          <p className="font-(family-name:--font-lora) italic text-primary/80 text-sm tracking-widest mb-3 uppercase">
             Frame Every Feeling
           </p>
-          <h1 className="font-[family-name:var(--font-cinzel)] text-5xl md:text-7xl font-black text-center text-foreground leading-tight tracking-tight text-balance drop-shadow-2xl">
+          <h1 className="font-(family-name:--font-cinzel) text-5xl md:text-7xl font-black text-center text-foreground leading-tight tracking-tight text-balance drop-shadow-2xl">
             Teja Visual Arts
           </h1>
-          <p className="font-[family-name:var(--font-lora)] text-muted-foreground text-center mt-4 max-w-md leading-relaxed text-base">
+          <p className="font-(family-name:--font-lora) text-muted-foreground text-center mt-4 max-w-md leading-relaxed text-base">
             Cinematic video editing, colour grading & motion — crafted with warmth.
           </p>
 
           {/* Scroll hint */}
           <div className="mt-10 flex flex-col items-center gap-2">
-            <span className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.3em] text-primary/60 uppercase">
+            <span className="font-(family-name:--font-cinzel) text-xs tracking-[0.3em] text-primary/60 uppercase">
               Scroll to explore
             </span>
             <div className="w-px h-12 bg-primary/40 animate-pulse" />
@@ -106,8 +106,8 @@ export default function HeroScene() {
           className="absolute bottom-6 left-6 z-30"
           style={{ opacity: Math.max(0, 1 - scrollProgress * 5) }}
         >
-          <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary/50 uppercase">
-            Studio — Est. 2019
+          <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary/50 uppercase">
+            Studio — Est. 2025
           </p>
         </div>
       </div>
