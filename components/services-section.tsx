@@ -47,14 +47,14 @@ export default function ServicesSection() {
 
         <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
+            <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
               Services
             </p>
-            <h2 className="font-[family-name:var(--font-cinzel)] text-4xl md:text-5xl font-bold text-foreground text-balance">
+            <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground text-balance">
               What I Craft
             </h2>
           </div>
-          <p className="font-[family-name:var(--font-lora)] italic text-muted-foreground max-w-xs leading-relaxed">
+          <p className="font-(family-name:--font-lora) italic text-muted-foreground max-w-xs leading-relaxed">
             Every service is offered with full creative commitment and cinematic intention.
           </p>
         </div>
@@ -87,10 +87,10 @@ export default function ServicesSection() {
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
 
-                <h3 className="font-[family-name:var(--font-cinzel)] text-base font-semibold text-foreground mb-2">
+                <h3 className="font-(family-name:--font-cinzel) text-base font-semibold text-foreground mb-2">
                   {service.title}
                 </h3>
-                <p className="font-[family-name:var(--font-lora)] text-sm text-muted-foreground leading-relaxed">
+                <p className="font-(family-name:--font-lora) text-sm text-muted-foreground leading-relaxed">
                   {service.desc}
                 </p>
               </div>
