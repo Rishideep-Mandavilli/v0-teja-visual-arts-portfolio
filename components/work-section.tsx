@@ -108,7 +108,7 @@ export default function WorkSection() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-[family-name:var(--font-cinzel)] text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
+                    className="font-(family-name:--font-cinzel) text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
                   >
                     {tag}
                   </span>
