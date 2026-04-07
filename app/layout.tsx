@@ -17,11 +17,15 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: light)',
       },
       {
+        url: '/teja-visual-arts-logo-design.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/teja-visual-arts-logo-Design.png',
+    apple: '/teja-visual-arts-logo-design.png',
   },
 }
 
