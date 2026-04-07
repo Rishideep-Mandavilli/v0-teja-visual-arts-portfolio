@@ -6,11 +6,11 @@ import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "The Wanderer",
+    title: "The Student's Journey",
     category: "Short Film",
-    year: "2024",
-    thumb: "/images/project-1.jpg",
-    description: "A lone journey through amber hills and forgotten roads.",
+    year: "2025",
+    thumb: "/images/thestudentsjourney.mp4",
+    description: "A journey of group of students who just became friends.",
   },
   {
     id: 2,

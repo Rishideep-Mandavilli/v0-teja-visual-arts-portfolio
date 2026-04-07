@@ -5,9 +5,9 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "The Wanderer",
+    title: "The Student's Journey",
     category: "Short Film",
-    year: "2024",
+    year: "2025",
     thumb: "/images/thestudentsjourney.mp4",
     description:
       "A lone journey through amber hills and forgotten roads. Winner of Best Editing at Indie Film Fest 2024.",
