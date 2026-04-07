@@ -78,10 +78,13 @@ export default function WorkSection() {
             onMouseLeave={() => setHovered(null)}
           >
             {/* Image */}
-            <img
-              src={project.thumb}
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            <video
+              src="/images/students-journey.mp4"
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
 
             {/* Default overlay */}
@@ -108,20 +111,20 @@ export default function WorkSection() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-[family-name:var(--font-cinzel)] text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
+                    className="font-(family-name:--font-cinzel) text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary/60 uppercase mb-1">
+              <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary/60 uppercase mb-1">
                 {project.category} · {project.year}
               </p>
-              <h3 className="font-[family-name:var(--font-cinzel)] text-2xl font-bold text-foreground">
+              <h3 className="font-(family-name:--font-cinzel) text-2xl font-bold text-foreground">
                 {project.title}
               </h3>
               <p
-                className="font-[family-name:var(--font-lora)] italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
+                className="font-(family-name:--font-lora) italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
                 style={{
                   maxHeight: hovered === project.id ? "80px" : "0px",
                   opacity: hovered === project.id ? 1 : 0,
@@ -132,7 +135,7 @@ export default function WorkSection() {
             </div>
 
             {/* Corner number */}
-            <div className="absolute top-4 right-4 font-[family-name:var(--font-cinzel)] text-xs text-foreground/30">
+            <div className="absolute top-4 right-4 font-(family-name:--font-cinzel) text-xs text-foreground/30">
               0{project.id}
             </div>
           </div>
