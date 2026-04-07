@@ -62,7 +62,7 @@ export default function ContactSection() {
                   <span className="font-(family-name:--font-lora) text-sm">hello@tejavisualarts.com</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/tejavisualarts/"
                   aria-label="Instagram"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
