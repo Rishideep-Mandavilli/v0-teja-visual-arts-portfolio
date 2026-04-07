@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image"; // Import Image for the other projects
+import Image from "next/image";
 
 const projects = [
   {
@@ -9,8 +9,8 @@ const projects = [
     title: "The Student's Journey",
     category: "Short Film",
     year: "2025",
-    thumb: "/images/thestudentsjourney.mp4", // Path to your video
-    description: "A lone journey through amber hills and forgotten roads. Winner of Best Editing at Indie Film Fest 2024.",
+    thumb: "/images/thestudentsjourney.mp4",
+    description: "A lone journey through amber hills and forgotten roads.",
     tags: ["Editing", "Color Grade", "Sound Design"],
   },
   {
@@ -19,8 +19,8 @@ const projects = [
     category: "Commercial",
     year: "2023",
     thumb: "/images/project-2.jpg",
-    description: "Rain-lit lanterns and the warmth of street food culture — a 60-second brand campaign.",
-    tags: ["Commercial", "Color Grade", "Motion Graphics"],
+    description: "Rain-lit lanterns and the warmth of street food culture.",
+    tags: ["Commercial", "Color Grade"],
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ const projects = [
     category: "Music Video",
     year: "2023",
     thumb: "/images/project-3.jpg",
-    description: "A dreamy countryside ode to slow summer evenings, shot on 16mm and hand-coloured.",
-    tags: ["Music Video", "Film Scan", "VFX"],
+    description: "A dreamy countryside ode to slow summer evenings.",
+    tags: ["Music Video", "VFX"],
   },
   {
     id: 4,
@@ -37,8 +37,8 @@ const projects = [
     category: "Documentary",
     year: "2022",
     thumb: "/images/project-4.jpg",
-    description: "Ancient stones and falling leaves — a 20-minute documentary on forgotten sacred spaces.",
-    tags: ["Documentary", "Editing", "Color Grade"],
+    description: "Ancient stones and falling leaves.",
+    tags: ["Documentary", "Editing"],
   },
 ];
 
@@ -47,28 +47,9 @@ export default function WorkSection() {
 
   return (
     <section id="work" className="py-24 px-6 max-w-7xl mx-auto">
-      {/* Section header */}
-      <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div>
-          <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
-            Selected Work
-          </p>
-          <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
-            Stories in Light
-            <br />
-            <span className="text-primary">& Shadow</span>
-          </h2>
-        </div>
-        <p className="font-(family-name:--font-lora) italic text-muted-foreground max-w-xs leading-relaxed">
-          Each project is a world carefully assembled — frame by frame, breath by breath.
-        </p>
-      </div>
-
-      {/* Projects grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, i) => {
           const isVideo = project.thumb.endsWith(".mp4");
-
           return (
             <div
               key={project.id}
@@ -77,11 +58,10 @@ export default function WorkSection() {
               onMouseEnter={() => setHovered(project.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Media Renderer (Video or Image) */}
               {isVideo ? (
                 <video
                   src={project.thumb}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
                   autoPlay
                   muted
                   loop
@@ -92,60 +72,16 @@ export default function WorkSection() {
                   src={project.thumb}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               )}
 
-              {/* Default overlay */}
-              <div
-                className="absolute inset-0 z-10 transition-opacity duration-500"
-                style={{
-                  background:
-                    "linear-gradient(to top, oklch(0.08 0.02 45 / 0.9) 0%, transparent 60%)",
-                }}
-              />
-
-              {/* Hover overlay */}
-              <div
-                className="absolute inset-0 z-20 transition-opacity duration-500"
-                style={{
-                  background: "oklch(0.10 0.025 45 / 0.6)",
-                  opacity: hovered === project.id ? 1 : 0,
-                }}
-              />
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-(family-name:--font-cinzel) text-[10px] tracking-widest text-primary border border-primary/40 rounded-full px-2.5 py-0.5 uppercase"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary/60 uppercase mb-1">
-                  {project.category} · {project.year}
-                </p>
-                <h3 className="font-(family-name:--font-cinzel) text-2xl font-bold text-foreground">
-                  {project.title}
-                </h3>
-                <p
-                  className="font-(family-name:--font-lora) italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
-                  style={{
-                    maxHeight: hovered === project.id ? "100px" : "0px",
-                    opacity: hovered === project.id ? 1 : 0,
-                  }}
-                >
+              {/* Text Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-30 bg-linear-to-t from-black to-transparent">
+                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                <p className={`text-sm text-gray-300 overflow-hidden transition-all duration-500 ${hovered === project.id ? "max-h-20 opacity-100" : "max-h-0 opacity-0"}`}>
                   {project.description}
                 </p>
-              </div>
-
-              {/* Corner number */}
-              <div className="absolute top-4 right-4 z-30 font-(family-name:--font-cinzel) text-xs text-foreground/30">
-                0{project.id}
               </div>
             </div>
           );
