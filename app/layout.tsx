@@ -13,15 +13,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/teja-visual-arts-logo-design.png',
+        media: '(prefers-color-scheme: light)',
       },
       {
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/teja-visual-arts-logo-Design.png',
   },
 }
 
