@@ -9,7 +9,7 @@ const projects = [
     title: "The Student's Journey",
     category: "Short Film",
     year: "2025",
-    thumb: "/images/thestudentsjourney.mp4",
+    thumb: "/images/thestudent'sjourney.mp4",
     description: "A journey of group of students who just became friends.",
   },
   {
@@ -137,7 +137,7 @@ export default function MonitorCarousel() {
           </div>
 
           {/* Details Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-8 z-30 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none">
+          <div className="absolute bottom-0 left-0 right-0 p-8 z-30 bg-linear-to-t from-black via-black/40 to-transparent pointer-events-none">
             <p className="text-[10px] tracking-[0.3em] text-orange-500/90 uppercase mb-2 font-mono font-bold">
               SYSTEM // {project.category}
             </p>

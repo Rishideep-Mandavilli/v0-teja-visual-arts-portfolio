@@ -9,7 +9,7 @@ const projects = [
     title: "The Student's Journey",
     category: "Short Film",
     year: "2025",
-    thumb: "/images/thestudentsjourney.mp4",
+    thumb: "/images/thestudent'sjourney.mp4",
     description: "A lone journey through amber hills and forgotten roads.",
     tags: ["Editing", "Color Grade", "Sound Design"],
   },
