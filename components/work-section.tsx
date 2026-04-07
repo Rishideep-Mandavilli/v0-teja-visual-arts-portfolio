@@ -114,14 +114,14 @@ export default function WorkSection() {
                   </span>
                 ))}
               </div>
-              <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-widest text-primary/60 uppercase mb-1">
+              <p className="font-(family-name:--font-cinzel) text-xs tracking-widest text-primary/60 uppercase mb-1">
                 {project.category} · {project.year}
               </p>
-              <h3 className="font-[family-name:var(--font-cinzel)] text-2xl font-bold text-foreground">
+              <h3 className="font-(family-name:--font-cinzel) text-2xl font-bold text-foreground">
                 {project.title}
               </h3>
               <p
-                className="font-[family-name:var(--font-lora)] italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
+                className="font-(family-name:--font-lora) italic text-sm text-muted-foreground mt-2 leading-relaxed transition-all duration-500 overflow-hidden"
                 style={{
                   maxHeight: hovered === project.id ? "80px" : "0px",
                   opacity: hovered === project.id ? 1 : 0,
