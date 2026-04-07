@@ -79,9 +79,12 @@ export default function WorkSection() {
           >
             {/* Image */}
             <video
-              src={project.thumb}
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="/images/students-journey.mp4"
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
 
             {/* Default overlay */}
