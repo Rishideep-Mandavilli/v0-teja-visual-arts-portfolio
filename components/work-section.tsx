@@ -78,14 +78,18 @@ export default function WorkSection() {
             onMouseLeave={() => setHovered(null)}
           >
             {/* Image */}
-            <video
-              src="/images/students-journey.mp4"
-              className="absolute inset-0 w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+            <div className="relative h-full w-full overflow-hidden rounded-xl">
+              <video
+                src="/images/thestudentsjourney.mp4"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              {/* Cinematic Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+            </div>
 
             {/* Default overlay */}
             <div
