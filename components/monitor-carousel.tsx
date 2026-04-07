@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useCallback, useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 const projects = [
   {
@@ -9,7 +9,6 @@ const projects = [
     title: "The Student's Journey",
     category: "Short Film",
     year: "2025",
-    // This matches your sidebar exactly
     thumb: "/images/thestudentsjourney.mp4",
     description: "A journey of group of students who just became friends.",
   },
@@ -41,82 +40,120 @@ const projects = [
 
 export default function MonitorCarousel() {
   const [active, setActive] = useState(0);
-
-  const prev = useCallback(() => {
-    setActive((v) => (v - 1 + projects.length) % projects.length);
-  }, []);
-
-  const next = useCallback(() => {
-    setActive((v) => (v + 1) % projects.length);
-  }, []);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const project = projects[active];
   const isVideo = project.thumb.toLowerCase().endsWith(".mp4");
 
+  const prev = useCallback(() => {
+    setActive((v) => (v - 1 + projects.length) % projects.length);
+    setIsPlaying(true);
+  }, []);
+
+  const next = useCallback(() => {
+    setActive((v) => (v + 1) % projects.length);
+    setIsPlaying(true);
+  }, []);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  // Re-run play logic when project changes
+  useEffect(() => {
+    if (isVideo && videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch(() => setIsPlaying(false));
+    }
+  }, [active, isVideo]);
+
   return (
-    <div className="relative flex flex-col items-center">
-      {/* The Monitor Frame */}
+    <div className="relative flex flex-col items-center group/monitor">
+      {/* Monitor Frame */}
       <div
-        className="monitor-glow relative rounded-2xl overflow-hidden bg-[#0a0a0a]"
+        className="monitor-glow relative rounded-2xl overflow-hidden bg-[#050505] cursor-pointer"
         style={{
-          border: "3px solid #333",
+          border: "4px solid #222",
           width: "min(800px, 92vw)",
           aspectRatio: "16/9",
-          boxShadow: `0 0 60px 20px rgba(255, 100, 50, 0.15)`,
+          boxShadow: `0 0 80px 10px rgba(255, 80, 0, 0.1)`,
         }}
+        onClick={togglePlay}
       >
-        {/* CRT Scanline Overlay (Visual Polish) */}
-        <div className="absolute inset-0 z-20 pointer-events-none opacity-10"
-          style={{ backgroundImage: "repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 3px)", backgroundSize: "100% 4px" }}
+        {/* CRT Scanline Overlay */}
+        <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.03]"
+          style={{ backgroundImage: "repeating-linear-gradient(0deg, #fff 0px, transparent 1px, transparent 4px)", backgroundSize: "100% 4px" }}
         />
 
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full flex items-center justify-center">
           {isVideo ? (
             <video
-              key={project.thumb} // Forces reload when switching projects
+              ref={videoRef}
+              key={project.thumb}
               src={project.thumb}
               className="w-full h-full object-cover"
               autoPlay
-              muted
+              muted={isMuted}
               loop
               playsInline
               preload="auto"
             />
           ) : (
-            <img
-              src={project.thumb}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
+            <img src={project.thumb} alt={project.title} className="w-full h-full object-cover" />
           )}
 
-          {/* Project Details Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-8 z-30 bg-gradient-to-t from-black via-black/60 to-transparent">
-            <p className="text-[10px] tracking-widest text-orange-500/80 uppercase mb-1 font-mono">
-              {project.category} // {project.year}
+          {/* Central Play Button (appears when paused) */}
+          {!isPlaying && isVideo && (
+            <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
+              <div className="w-20 h-20 rounded-full border-2 border-orange-500 flex items-center justify-center bg-black/40 text-orange-500 animate-pulse">
+                <Play size={40} fill="currentColor" />
+              </div>
+            </div>
+          )}
+
+          {/* Controls Overlay (Bottom Right) */}
+          <div className="absolute bottom-6 right-6 z-50 flex gap-3 opacity-0 group-hover/monitor:opacity-100 transition-opacity">
+            <button
+              onClick={(e) => { e.stopPropagation(); setIsMuted(!isMuted); }}
+              className="p-3 rounded-full bg-black/60 text-white hover:text-orange-500 border border-white/10"
+            >
+              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); togglePlay(); }}
+              className="p-3 rounded-full bg-black/60 text-white hover:text-orange-500 border border-white/10"
+            >
+              {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
+            </button>
+          </div>
+
+          {/* Details Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 p-8 z-30 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none">
+            <p className="text-[10px] tracking-[0.3em] text-orange-500/90 uppercase mb-2 font-mono font-bold">
+              SYSTEM // {project.category}
             </p>
-            <h3 className="text-3xl font-bold text-white uppercase tracking-tight">
+            <h3 className="text-4xl font-black text-white uppercase tracking-tighter italic">
               {project.title}
             </h3>
-            <p className="text-sm text-gray-400 mt-2 max-w-md line-clamp-2 italic">
-              {project.description}
-            </p>
           </div>
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <button
-        onClick={prev}
-        className="absolute left-[-60px] top-1/2 -translate-y-1/2 p-2 text-white/20 hover:text-orange-500 transition-all active:scale-90"
-      >
-        <ChevronLeft size={48} strokeWidth={1} />
+      {/* Navigation arrows */}
+      <button onClick={prev} className="absolute left-[-80px] top-1/2 -translate-y-1/2 p-2 text-white/20 hover:text-orange-500 transition-all">
+        <ChevronLeft size={60} strokeWidth={1} />
       </button>
-      <button
-        onClick={next}
-        className="absolute right-[-60px] top-1/2 -translate-y-1/2 p-2 text-white/20 hover:text-orange-500 transition-all active:scale-90"
-      >
-        <ChevronRight size={48} strokeWidth={1} />
+      <button onClick={next} className="absolute right-[-80px] top-1/2 -translate-y-1/2 p-2 text-white/20 hover:text-orange-500 transition-all">
+        <ChevronRight size={60} strokeWidth={1} />
       </button>
     </div>
   );
