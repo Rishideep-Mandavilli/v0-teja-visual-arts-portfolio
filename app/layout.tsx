@@ -9,7 +9,7 @@ const lora = Lora({ subsets: ["latin"], variable: "--font-lora", style: ["normal
 export const metadata: Metadata = {
   title: 'Teja Visual Arts — Cinematic Video Editing Studio',
   description: 'A cozy cinematic editing studio crafting emotional stories through film. Based in the warmth of golden hour, always.',
-  generator: 'v0.app',
+  generator: 'Rishideep-Mandavilli',
   icons: {
     icon: [
       {
@@ -26,6 +26,27 @@ export const metadata: Metadata = {
       },
     ],
     apple: '/teja-visual-arts-logo-design.png',
+  },
+  openGraph: {
+    title: 'Teja Visual Arts',
+    description: 'Cinematic storytelling through editing & color',
+    url: 'https://teja-visual-arts-portfolio.vercel.app/',
+    siteName: 'Teja Visual Arts',
+    images: [
+      {
+        url: '/teja-visual-arts-logo-design.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Teja Visual Arts',
+    description: 'Cinematic storytelling through editing & color',
+    images: ['/teja-visual-arts-logo-design.png'],
   },
 }
 
