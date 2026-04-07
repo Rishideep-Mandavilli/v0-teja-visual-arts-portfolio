@@ -53,10 +53,10 @@ export default function WorkSection() {
       {/* Section header */}
       <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
+          <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
             Selected Work
           </p>
-          <h2 className="font-[family-name:var(--font-cinzel)] text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
+          <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
             Stories in Light
             <br />
             <span className="text-primary">& Shadow</span>
