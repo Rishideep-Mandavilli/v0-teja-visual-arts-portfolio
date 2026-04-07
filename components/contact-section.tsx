@@ -59,7 +59,7 @@ export default function ContactSection() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  <span className="font-(family-name:--font-lora) text-sm">hello@tejavisualarts.com</span>
+                  <span className="font-(family-name:--font-lora) text-sm">rishideep.edu@gmail.com</span>
                 </a>
                 <a
                   href="https://www.instagram.com/tejavisualarts/"
