@@ -132,7 +132,7 @@ export default function WorkSection() {
             </div>
 
             {/* Corner number */}
-            <div className="absolute top-4 right-4 font-[family-name:var(--font-cinzel)] text-xs text-foreground/30">
+            <div className="absolute top-4 right-4 font-(family-name:--font-cinzel) text-xs text-foreground/30">
               0{project.id}
             </div>
           </div>
