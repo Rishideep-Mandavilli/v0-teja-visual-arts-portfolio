@@ -40,22 +40,20 @@ const projects = [
 
 export default function MonitorCarousel() {
   const [active, setActive] = useState(0);
-  const [direction, setDirection] = useState<"left" | "right">("right");
 
   const prev = useCallback(() => {
-    setDirection("left");
     setActive((v) => (v - 1 + projects.length) % projects.length);
   }, []);
 
   const next = useCallback(() => {
-    setDirection("right");
     setActive((v) => (v + 1) % projects.length);
   }, []);
 
   const project = projects[active];
+  // Check if the current project thumb is a video
+  const isVideo = project.thumb.toLowerCase().endsWith(".mp4");
 
   return (
-    /* CRT-style monitor frame */
     <div className="relative flex flex-col items-center">
       {/* Monitor outer bezel */}
       <div
@@ -82,23 +80,37 @@ export default function MonitorCarousel() {
         />
 
         {/* Screen content */}
-        <div className="relative aspect-video overflow-hidden">
-          <img
-            key={project.id}
-            src={project.thumb}
-            alt={project.title}
-            className="w-full h-full object-cover transition-all duration-700"
-            style={{ filter: "brightness(0.9) contrast(1.05) saturate(1.1)" }}
-          />
+        <div className="relative aspect-video overflow-hidden bg-black">
+          {isVideo ? (
+            <video
+              key={project.thumb} // Key ensures video reloads when switching projects
+              src={project.thumb}
+              className="w-full h-full object-cover transition-all duration-700"
+              style={{ filter: "brightness(0.9) contrast(1.05) saturate(1.1)" }}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <img
+              key={project.id}
+              src={project.thumb}
+              alt={project.title}
+              className="w-full h-full object-cover transition-all duration-700"
+              style={{ filter: "brightness(0.9) contrast(1.05) saturate(1.1)" }}
+            />
+          )}
 
           {/* Warm amber tint overlay on screen */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-0 pointer-events-none z-10"
             style={{ background: "oklch(0.55 0.12 55 / 0.08)", mixBlendMode: "multiply" }}
           />
 
           {/* Project info overlay at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 z-10"
+          <div
+            className="absolute bottom-0 left-0 right-0 p-5 z-30"
             style={{ background: "linear-gradient(transparent, oklch(0.08 0.02 45 / 0.95))" }}
           >
             <div className="flex items-end justify-between">
@@ -114,7 +126,6 @@ export default function MonitorCarousel() {
                 </p>
               </div>
 
-              {/* Play button */}
               <button
                 aria-label={`Play ${project.title}`}
                 className="flex items-center justify-center w-12 h-12 rounded-full border border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 shrink-0 ml-4"
@@ -125,7 +136,7 @@ export default function MonitorCarousel() {
           </div>
 
           {/* Dot indicators */}
-          <div className="absolute top-3 right-3 flex gap-1.5 z-10">
+          <div className="absolute top-3 right-3 flex gap-1.5 z-30">
             {projects.map((_, i) => (
               <button
                 key={i}
@@ -139,10 +150,7 @@ export default function MonitorCarousel() {
         </div>
 
         {/* Bottom bezel strip */}
-        <div
-          className="flex items-center justify-between px-6 py-3"
-          style={{ background: "oklch(0.15 0.03 47)" }}
-        >
+        <div className="flex items-center justify-between px-6 py-3" style={{ background: "oklch(0.15 0.03 47)" }}>
           <span className="font-(family-name:--font-cinzel) text-[10px] tracking-widest text-primary/50 uppercase">
             Teja Visual Arts · Portfolio
           </span>
@@ -157,22 +165,17 @@ export default function MonitorCarousel() {
         className="w-24 h-4 mt-0 rounded-b-sm"
         style={{ background: "oklch(0.22 0.04 48)", boxShadow: "0 4px 12px oklch(0 0 0 / 0.5)" }}
       />
-      <div
-        className="w-40 h-2 rounded-sm"
-        style={{ background: "oklch(0.18 0.03 45)" }}
-      />
+      <div className="w-40 h-2 rounded-sm" style={{ background: "oklch(0.18 0.03 45)" }} />
 
-      {/* Carousel nav arrows — outside monitor */}
+      {/* Navigation arrows */}
       <button
         onClick={prev}
-        aria-label="Previous project"
         className="absolute left-0 top-1/3 -translate-x-full -translate-y-1/2 mr-4 flex items-center justify-center w-10 h-10 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={next}
-        aria-label="Next project"
         className="absolute right-0 top-1/3 translate-x-full -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
       >
         <ChevronRight className="w-5 h-5" />
