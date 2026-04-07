@@ -8,7 +8,7 @@ const projects = [
     title: "The Wanderer",
     category: "Short Film",
     year: "2024",
-    thumb: "/images/project-1.jpg",
+    thumb: "/images/thestudentsjourney.mp4",
     description:
       "A lone journey through amber hills and forgotten roads. Winner of Best Editing at Indie Film Fest 2024.",
     tags: ["Editing", "Color Grade", "Sound Design"],
@@ -53,16 +53,16 @@ export default function WorkSection() {
       {/* Section header */}
       <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
+          <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
             Selected Work
           </p>
-          <h2 className="font-[family-name:var(--font-cinzel)] text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
+          <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
             Stories in Light
             <br />
             <span className="text-primary">& Shadow</span>
           </h2>
         </div>
-        <p className="font-[family-name:var(--font-lora)] italic text-muted-foreground max-w-xs leading-relaxed">
+        <p className="font-(family-name:--font-lora) italic text-muted-foreground max-w-xs leading-relaxed">
           Each project is a world carefully assembled — frame by frame, breath by breath.
         </p>
       </div>
