@@ -53,10 +53,10 @@ export default function WorkSection() {
       {/* Section header */}
       <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <p className="font-(family-name:--font-cinzel) text-xs tracking-[0.4em] text-primary uppercase mb-3">
+          <p className="font-[family-name:var(--font-cinzel)] text-xs tracking-[0.4em] text-primary uppercase mb-3">
             Selected Work
           </p>
-          <h2 className="font-(family-name:--font-cinzel) text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
+          <h2 className="font-[family-name:var(--font-cinzel)] text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
             Stories in Light
             <br />
             <span className="text-primary">& Shadow</span>
@@ -78,18 +78,14 @@ export default function WorkSection() {
             onMouseLeave={() => setHovered(null)}
           >
             {/* Image */}
-            <div className="relative h-full w-full overflow-hidden rounded-xl">
-              <video
-                src="/images/thestudentsjourney.mp4"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              {/* Cinematic Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-            </div>
+            <video
+              src="/images/students-journey.mp4"
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
 
             {/* Default overlay */}
             <div
