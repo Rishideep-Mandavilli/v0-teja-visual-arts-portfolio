@@ -14,11 +14,11 @@ const projects = [
   },
   {
     id: 2,
-    title: "Night Market",
-    category: "Commercial",
-    year: "2023",
-    thumb: "/images/project-2.jpg",
-    description: "Rain-lit lanterns and the warmth of street food culture.",
+    title: "Campus Crush",
+    category: "Music Video",
+    year: "2025",
+    thumb: "/images/campus-crush.mp4",
+    description: "A song about how beautiful our college days are.",
   },
   {
     id: 3,
