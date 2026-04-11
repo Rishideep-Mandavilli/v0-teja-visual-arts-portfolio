@@ -1,6 +1,6 @@
 # v0-teja-visual-arts-portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+This is a [Next.js](https://nextjs.org) project built by Rishideep Mandavilli.
 
 ## Built with v0
 
