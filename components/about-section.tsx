@@ -8,7 +8,7 @@ const skills = [
   { label: "Visual Effects", value: 65 },
 ];
 
-const tools = ["DaVinci Resolve", "Adobe Premiere", "After Effects", "Final Cut Pro", "Audition", "Fusion"];
+const tools = ["DaVinci Resolve", "Adobe Premiere", "After Effects", "Cap Cut",];
 
 export default function AboutSection() {
   return (
