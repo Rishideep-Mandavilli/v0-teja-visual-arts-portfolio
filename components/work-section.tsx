@@ -24,7 +24,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "GVP Sankranthi Celebrations",
+    title: "GVP Fest Celebrations",
     category: "Trailer Video",
     year: "2025",
     thumb: "/images/gvp-college.mp4",
