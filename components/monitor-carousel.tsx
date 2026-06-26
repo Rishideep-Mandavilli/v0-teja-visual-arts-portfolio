@@ -36,6 +36,14 @@ const projects = [
     thumb: "/images/cse-freshers.mp4",
     description: "Freshers part of the students of CSE Department.",
   },
+  {
+    id: 5,
+    title: "KirtanXHarekrishna-Invitation",
+    category: "Invitation Video",
+    year: "2026",
+    thumb: "/images/Kirtanx-Harekrishna.mp4",
+    description: "Kirtanx is a band music night party by Hare Krishna Moment.",
+  },
 ];
 
 export default function MonitorCarousel() {
@@ -83,8 +91,8 @@ export default function MonitorCarousel() {
         className="monitor-glow relative rounded-2xl overflow-hidden bg-[#050505] cursor-pointer"
         style={{
           border: "4px solid #222",
-          width: "min(800px, 92vw)",
-          aspectRatio: "16/9",
+          width: "min(450px, 92vw)",
+          aspectRatio: "9/16",
           boxShadow: `0 0 80px 10px rgba(255, 80, 0, 0.1)`,
         }}
         onClick={togglePlay}
