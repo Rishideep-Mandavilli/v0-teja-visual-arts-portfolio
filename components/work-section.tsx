@@ -40,6 +40,15 @@ const projects = [
     description: "Freshers part of the students of CSE Department.",
     tags: ["Trailer", "Editing"],
   },
+  {
+    id: 5,
+    title: "KirtanXHareKrishna-Invitation",
+    category: "Invitation Video",
+    year: "2026",
+    thumb: "/images/Kirtanx-Harekrishna.mp4",
+    description: "Kirtanx is a band music night party by Hare Krishna Moment.",
+    tags: ["Invitation", "VFX"],
+  },
 ];
 
 export default function WorkSection() {
